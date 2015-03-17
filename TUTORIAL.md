@@ -4,20 +4,27 @@ in this tutorial, we will be [playing](http://www.creativebloq.com/design/exampl
 
 let's get started! :3
 
-# install generator
+# setup initial project
+
+there are two ways to setup our project, we can either
+
+clone this project (which has this tutorial, tests, and all the packages we need already in the package.json):
+
+```
+$ git clone https://github.com/ioschool/tween-party
+$ cd tween-party
+$ npm install
+```
+
+or generate a fresh project:
 
 ```
 $ npm install -g slush slush-pages
-```
-
-# generate initial app
-
-```
 $ slush pages
 [slush] Using slushfile /home/dinosaur/.nvm/versions/io.js/v1.4.2/lib/node_modules/slush-pages/slushfile.js
 ? Give your app a name: tween-party
 ? How would you describe the app? tweening graphics like what
-? What is your name on GitHub? ioschool
+? What is your name on GitHub? ohmyname
 ? Choose a license: ISC
 ```
 
@@ -70,8 +77,12 @@ var bounds = [
   document.body.clientHeight,
 ]
 
+// get a randomState function with
+// the bounds arguments already applied
+var randomState = Circle.randomState.bind(null, bounds)
+
 var circle = Circle({
-  state: randomState(bounds),
+  state: randomState,
 })
 circle.render()
 circle.appendTo('svg')
@@ -117,7 +128,8 @@ var tween = require('./lib/tween')
 // ...
 
 tween({
-  circle: circle
+  state: circle.state,
+  nextState: randomState,
   duration: 5,
   ease: "quadOut",
 })
