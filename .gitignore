@@ -3,5 +3,3 @@ npm-debug.log*
 
 .DS_Store
 *.swp
-
-bundle.js
