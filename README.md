@@ -1,6 +1,8 @@
 # tween-party
 
-[ioschool.is](http://ioschool.is) learning tutorial on tweening graphics".
+[ioschool.is](http://ioschool.is) learning tutorial on tweening graphics.
+
+[![deployed tween party](https://raw.githubusercontent.com/ioschool/tween-party/master/tween-party.png)](https://ioschool.is/tween-party)
 
 ## tutorial
 
