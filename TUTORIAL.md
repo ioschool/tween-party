@@ -55,7 +55,7 @@ browse to <http://localhost:5000>. (=^.^=)
 # normalize page in css
 
 ```css
-<!-- index.css -->
+/* index.css */
 html, body, main {
   height: 100%;
   width: 100%;
