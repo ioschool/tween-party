@@ -9,7 +9,7 @@ function keyup(e,n){window.addEventListener("keyup",function(o){eventToKey(o)===
 
 
 },{"keycode":10}],4:[function(require,module,exports){
-function tween(e){var t=Tweenr();return step(t,e).on("complete",function(){step(t,e)}),t}function step(e,t){return e.to(t.state,extend(t.nextState(),{duration:t.duration,ease:t.ease}))}var Tweenr=require("tweenr"),extend=require("xtend");module.exports=tween;
+function tween(e){var t=Tweenr();return recursiveStep(t,e),t}function recursiveStep(e,t){return e.to(t.state,extend(t.nextState(),{duration:t.duration,ease:t.ease})).on("complete",function(){recursiveStep(e,t)})}var Tweenr=require("tweenr"),extend=require("xtend");module.exports=tween;
 
 
 },{"tweenr":13,"xtend":63}],5:[function(require,module,exports){
